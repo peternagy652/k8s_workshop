@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: server
+  labels:
+    role: backend
+spec:
+  containers:
+    - name: server
+      image: peternagy652/k8s_sample_backend:1.0.3
+      env:
+        - name: REPOSITORY
+          value: "inmemory"

@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: client
+  labels:
+    role: frontend
+spec:
+  volumes:
+    - name: nginx
+      configMap:
+        name: nginxconf
+  containers:
+    - name: client
+      image: peternagy652/k8s_sample_frontend:1.0.3
+      volumeMounts:
+        - name: nginx
+          mountPath: "/etc/nginx/conf.d/default.conf"
+          subPath: nginx.conf
