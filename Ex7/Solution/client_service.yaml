@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: client
+spec:
+  selector:
+    role: frontend
+  ports:
+    - name: client-port
+      protocol: TCP
+      port: 443
+      targetPort: 443

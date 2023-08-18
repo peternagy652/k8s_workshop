@@ -46,23 +46,23 @@ Using 3rd party components and inject TLS certificates into our Ingress.
 
 ## Exercise XII.
 
-Deploying manifests one by one is cumbersome, let's use a solution and package our app together: using Helm.
+Data persistance, Persisted Volumes and their Claims.
 
 ## Exercise XIII.
 
-Collect logs and metrics, monitoring in practice.
+Deploying manifests one by one is cumbersome, let's use a solution and package our app together: using Helm.
 
 ## Exercise XIV.
 
-Updates, green-blue deployments, recovery and disruption budget.
+Collect logs and metrics, monitoring in practice.
 
 ## Exercise XV.
 
-Our database is not really stateful, utilize StatefulSets.
+Updates, green-blue deployments, recovery and disruption budget.
 
 ## Exercise XVI.
 
-There are no limitations everything is accessible, let's limit that with NetworkPolicies.
+Our database is not really stateful, utilize StatefulSets.
 
 ## Exercise XVII.
 
@@ -70,16 +70,20 @@ Access control inside your cluster: RBAC
 
 ## Exercise XVIII.
 
-Operators and Custom Resources.
+There are no limitations everything is accessible, let's limit that with NetworkPolicies.
 
 ## Exercise XIX.
 
-Periodic and scheduled execution of tasks using Jobs.
+Operators and Custom Resources.
 
 ## Exercise XX.
 
-How this whole thing looks like on a larger scale? - Case Study
+Periodic and scheduled execution of tasks using Jobs.
 
 ## Exercise XXI.
+
+How this whole thing looks like on a larger scale? - Case Study
+
+## Exercise XXII.
 
 How to manage configuration for multiple environments using Kustomize.

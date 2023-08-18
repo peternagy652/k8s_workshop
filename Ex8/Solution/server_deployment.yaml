@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server-deployment
+  labels:
+    app: server
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: server
+  template:
+    metadata:
+      labels:
+        app: server
+        environment: development
+        role: backend
+    spec:
+      containers:
+      - name: server
+        image: peternagy652/k8s_sample_backend:1.0.3
+        env:
+        - name: REPOSITORY
+          value: "postgre"
+        - name: DB_USER
+          value: "k8s"
+        - name: DB_PASSWORD
+          value: "password"
+        - name: DB_NAME
+          value: "k8s"
+        - name: DB_ADDRESS
+          value: "postgre:5432"
