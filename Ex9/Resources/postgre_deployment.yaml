@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgre-deployment
+  labels:
+    app: postgre
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgre
+  template:
+    metadata:
+      labels:
+        app: postgre
+        environment: development
+        role: database
+    spec:
+      containers:
+      - name: postgre
+        image: postgres:15.4
+        env:
+        - name: POSTGRES_USER
+          valueFrom:
+            secretKeyRef:
+              name: postgre-secret
+              key: username
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: postgre-secret
+              key: password
+        - name: POSTGRES_DB
+          valueFrom:
+            secretKeyRef:
+              name: postgre-secret
+              key: databasename
